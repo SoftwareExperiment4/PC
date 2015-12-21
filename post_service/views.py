@@ -28,3 +28,11 @@ def post_list(request):
 	context = Context({'post_list': posts, 'current_page': int(page), 'total_page': range(1, page_data.num_pages + 1)})
 	
 	return HttpResponse(template.render(context))
+
+def post_write(request):
+	template = get_template('post_write.html')
+	posts = Post.objects.all()
+	
+	context = Context({'post_list': posts})
+	
+	return HttpResponse(template.render(context))

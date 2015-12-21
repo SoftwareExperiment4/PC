@@ -66,5 +66,10 @@
 			</a>
 		{% endfor %}
 	</div>
+	
+	<form id="write", method="get" action="{% url 'write' %}">
+		{% csrf_token %}
+		<input type="submit" value="WRITE"/>
+	</form>
 </body>
 </html>
