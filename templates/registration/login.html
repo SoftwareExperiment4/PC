@@ -1,0 +1,14 @@
+<html>
+<body>
+	<form id="login" method="post" action="{% url 'login_url' %}">
+		{% csrf_token %}
+		{{ form.as_table }}
+		<input type="submit" value="Login"/>
+		
+	</form>
+	<form id="signup", method="get" action="{% url 'signup' %}">
+		{% csrf_token %}
+		<input type="submit" value="Sign UP"/>
+	</form>
+</body>
+</html>

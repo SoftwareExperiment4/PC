@@ -85,23 +85,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 	"social.apps.django_app.context_processors.login_redirect",
 )#added...
 
-AUTHENTICATION_BACKENDS = (
-	'social.backends.facebook.FacebookOAuth2',
-	'social.backends.google.GoogleOAuth2',
-	'django.contrib.auth.backends.ModelBackend',
-)
-
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
-SOCIAL_AUTH_URL_NAMESPACE = 'social'
-
-#Facebook
-SOCIAL_AUTH_FACEBOOK_KEY = ''
-SOCIAL_AUTH_FACEBOOK_SECRET = ''
-
-#Google
-SOCIAL_AUTH_GOOGLE_KEY= ''
-SOCIAL_AUTH_GOOGLE_SECRET = ''
-
 WSGI_APPLICATION = 'board.wsgi.application'
 
 

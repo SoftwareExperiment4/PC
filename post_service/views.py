@@ -4,10 +4,11 @@ from django.template.loader import get_template
 from django.http.response import HttpResponse
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.core.context_processors import csrf
-
+from django.contrib.auth.decorators import login_required
 from post_service.models import Post
 
 # Create your views here.
+@login_required
 def post_list(request):
 	template = get_template('post_list.html')
 	

@@ -16,17 +16,15 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from django.views.generic import TemplateView
-import post_service
+from post_service.urls import post_service
 
 urlpatterns = [
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^board/', include('post_service.urls')),
-	url(r'^accounts/profile/', include('post_service.urls')),
 	url(r'^signup/$', 'register.views.signup', name='signup'),
 	url(r'^signup_ok/$', TemplateView.as_view(
 		template_name='registration/signup_ok.html'
 	), name='signup_ok'),
-
 	url(r'^login/$', 'django.contrib.auth.views.login', name='login_url'),
 	url(r'^logout/$', 'django.contrib.auth.views.logout', {
 		'next_page': '/login/',
